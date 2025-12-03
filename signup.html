@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign Up - Ani Watch</title>
     <link rel="stylesheet" href="index.css">
 </head>
-
-<body class="signup-container">
-    <div class="signup">
-        <div class="data">
-            <label for="name"> Name : </label>
-            <input type="text"><br>
-            <label for="email"> Email : </label>
-            <input type="email"><br>
-            <label fpr="pass"> New Password : </label>
-            <input type="password"><br>
-        </div>
-        <div class="but">
-            <button>Signup</button>
-        </div>
+<body>
+    <div class="signup-container">
+        <h2>Sign Up for Ani Watch</h2>
+        <form class="signup-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+        <a href="index.html">Back to Home</a>
     </div>
 </body>
-
 </html>

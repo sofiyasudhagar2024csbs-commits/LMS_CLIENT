@@ -8,29 +8,90 @@
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
+<body style="background-image: url('https://images.unsplash.com/photo-1613376023733-0a73315d9b06?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3'); background-size: cover; background-position: center; background-attachment: fixed; color: white;">
     <header class="header-container">
         <div class="logo">
             <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="logo-image">
         </div>
         <nav class="head-container">
             <ul class="head-items">
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
                 </ul>
         </nav>
     </header>
+<main>
+    <main class="body-content">
+    <section id="home">
+        <div class="box"></div>
 
-    <main class="login-container">
-        <form class="login-form">
-            <h2>Login</h2>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-    </main>
-
+        <h2>Welcome to Ani Watch</h2>
+        <p>Discover the ultimate destination for anime enthusiasts. Our platform offers a comprehensive collection of anime series, movies, and exclusive content. Whether you're a seasoned otaku or just beginning your anime journey, we provide high-quality streaming with subtitles and dubbing options to enhance your viewing experience.</p>
+        <p>Join our community of passionate anime fans and explore thousands of titles across all genres. From classic series to the latest releases, we bring you the best of Japanese animation with crystal-clear video quality and seamless streaming technology.</p>
+        <p>Experience anime like never before with our advanced streaming platform. We offer HD and 4K quality videos, multiple language options, and personalized recommendations based on your viewing history. Our user-friendly interface makes it easy to discover new series and keep track of your favorites.</p>
+        <p>Start your anime adventure today! Create an account to unlock exclusive features, build your watchlist, and connect with fellow anime enthusiasts from around the world. Premium members enjoy ad-free streaming and early access to new releases.</p>
+        <div class="auth-buttons">
+            <button onclick="window.location.href='login.html'">Login</button>
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Ani Watch was founded with a simple mission: to make anime accessible to fans worldwide. We believe that great storytelling transcends language barriers, and anime represents some of the most creative and compelling narratives in entertainment today.</p>
+        <p>Our dedicated team works tirelessly to curate content, ensure quality streaming, and build features that enhance your anime watching experience. We're committed to supporting both emerging and established anime creators while fostering a respectful and inclusive community for all fans.</p>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Get in touch with our team for support, feedback, or business inquiries.</p>
+        <div class="contact-info">
+            <p><strong>Email:</strong> support@aniwatch.com</p>
+            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+            <p><strong>Address:</strong> 123 Anime Street, Tokyo District, Japan</p>
+            <p><strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 6:00 PM (JST)</p>
+        </div>
+        <div class="contact-form">
+            <h3>Send us a message</h3>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    Ani Watch
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.head-items a');
+        
+        // Hide all sections initially
+        sections.forEach(section => section.style.display = 'none');
+        
+        // Show home section by default
+        document.getElementById('home').style.display = 'block';
+        
+        // Add click event to navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                
+                // Hide all sections
+                sections.forEach(section => section.style.display = 'none');
+                
+                // Show target section
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                }
+            });
+        });
+    });
+</script>
 </body>
 
 </html>
